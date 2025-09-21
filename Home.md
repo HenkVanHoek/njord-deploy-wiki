@@ -6,9 +6,13 @@ This project was started as a simple idea to have an easy method for installing 
 
 Currently we are working on the Alpha version.
 It is the phase which is defined to have an operational version working with at least 3 services.
-## Dashy Service
+## Homarr (Replaced Dashy)
 ## Portainer Service
-## Traefik Service
+## Pi-hole
+## Traefik Service is planned as the next service
+And meanwhile there is an editor which is a web ui for the metadata, the parameters and docker compose templates for the services. It's purpose is to check for port usage as it is not possible to have 2 services using one port. 
 
 We discovered during this development some issues which resulted in a rewrite for some parts of the code. 1 step back to get at least 2 steps forward principle.
+
+The development method is a kind of agile style development with emphasis on Test Driven Development. Also use is made of pre commit checks for linter, black and flake up to security checks with bandit.
 Main reason was the problem for supporting the different environments like MacOS, Windows and Linux and the problem with developing on Windows WSL. Bad mistake. Especially for the networking detection part. 
