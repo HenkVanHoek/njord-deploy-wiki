@@ -17,7 +17,7 @@ We discovered during this development some issues which resulted in a rewrite fo
 The development method is a kind of agile style development with emphasis on Test Driven Development. Also use is made of pre commit checks for linter, black and flake up to security checks with bandit.
 Main reason was the problem for supporting the different environments like MacOS, Windows and Linux and the problem with developing on Windows WSL. Bad mistake. Especially for the networking detection part. 
 
-## Configuration Data Editor
+## PiSelfhosting Component Editor
 Some screenshots from the editor:
 <img width="945" height="678" alt="image" src="https://github.com/user-attachments/assets/dfb514f7-6f54-4478-9965-4568ec9160a9" />
 <img width="945" height="676" alt="image" src="https://github.com/user-attachments/assets/6aa53402-9733-4f42-9798-051e78da97b9" />
