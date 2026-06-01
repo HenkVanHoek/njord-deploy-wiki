@@ -12,10 +12,10 @@ To understand how PiSelfhosting organizes your home server, we use three core co
 graph TD
     subgraph Grouping [Organized in Sidebar]
         G[Groups / Categories]
-    </div>
+    end
     subgraph CoreUnit [Atomic Units]
         C[Components]
-    </div>
+    end
     subgraph Stacks [Preconfigured Bundles]
         P[Packages / Stacks]
     end
