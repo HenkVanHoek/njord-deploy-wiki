@@ -1,27 +1,72 @@
-# Welcome to the PiSelfhosting wiki!
+```markdown
+# Welcome to the PiSelfhosting Wiki 🚀
 
-As the name of this project suggests, it's purpose is to make the installation of all kind of services as easy as possible. 
+PiSelfhosting is a modular, lightweight, and sovereign stack orchestrator 
+designed to deploy self-hosted services onto Debian and Raspberry Pi servers. 
+It completely eliminates the manual hassle of writing docker-compose files, 
+managing networks, and configuring reverse proxies.
 
-This project was started as a simple idea to have an easy method for installing Home Assistent, Frigate and MQTT. Altough I got it working with some a seperate config program which was capable of detecting newly connected camara's. I thought the principle of a generic docker compose template for each service assisted with a configuration app for each service was born and resulted in thinking about how to get this going. PiSelfhosting concept was born.
+---
 
-Currently we are working on the Alpha version.
-It is the phase which is defined to have an operational version working with at least 3 services.
-## Homarr (Replaced Dashy)
-## Portainer Service
-## Pi-hole
-## Traefik Service is planned as the next service
-And meanwhile there is an editor which is a web ui for the metadata, the parameters and docker compose templates for the services. It's purpose is to check for port usage as it is not possible to have 2 services using one port. 
+## 💡 The Mental Model
 
-We discovered during this development some issues which resulted in a rewrite for some parts of the code. 1 step back to get at least 2 steps forward principle.
+To understand how PiSelfhosting organizes your home server, we use three 
+core concepts:
 
-The development method is a kind of agile style development with emphasis on Test Driven Development. Also use is made of pre commit checks for linter, black and flake up to security checks with bandit.
-Main reason was the problem for supporting the different environments like MacOS, Windows and Linux and the problem with developing on Windows WSL. Bad mistake. Especially for the networking detection part. 
+```
++-----------------------------------------------------------------+
+|                           Groups                                |
+|  - Categories (e.g. databases, network, productivity)           |
+|  - Used for organizing independent standalone components         |
++-----------------------------------------------------------------+
+                                |
+                                v
++-----------------------------------------------------------------+
+|                          Components                             |
+|  - The atomic unit: a single container definition               |
+|  - Contains metadata, user variables, and compose templates     |
++-----------------------------------------------------------------+
+                                |
+                                v
++-----------------------------------------------------------------+
+|                          Packages                               |
+|  - Preconfigured stacks of coupled components                   |
+|  - Example: Nextcloud App + MariaDB + Redis + Notify Push       |
++-----------------------------------------------------------------+
+```
 
-## PiSelfhosting Component Editor
-Some screenshots from the editor:
-<img width="945" height="678" alt="image" src="https://github.com/user-attachments/assets/dfb514f7-6f54-4478-9965-4568ec9160a9" />
-<img width="945" height="676" alt="image" src="https://github.com/user-attachments/assets/6aa53402-9733-4f42-9798-051e78da97b9" />
-<img width="945" height="672" alt="image" src="https://github.com/user-attachments/assets/63cb9a8d-6fab-4181-af91-368f67c5b974" />
+1. **Components**: The atomic building blocks (e.g., `nextcloud-app`, 
+   `nextcloud-db`, `vaultwarden`). Each component has its own template, 
+   configurations, and isolated metadata.
+2. **Groups (Categories)**: Logical groupings (e.g., `Databases`, 
+   `Productivity`, `Network`) used in the standard setup to browse and 
+   select standalone components.
+3. **Packages (Stacks)**: Bound compositions of components designed to 
+   work together as a single preconfigured stack (e.g., the `nextcloud-stack` 
+   combining the portal, database, redis cache, and push dumper).
 
+---
 
+## 📚 Wiki Table of Contents
 
+Navigate through the documentation using the guides below:
+
+### 🛠️ Getting Started & Networking
+*   **[Domain & Port Forwarding](Domain-and-Port-Forwarding)**  
+    Learn how to configure your router, manage DNS records, and forward 
+    port 80 and 443 to your Raspberry Pi.
+*   **[Reverse Proxy Setup (NPM, Traefik, Caddy)](Reverse-Proxy-Guides)**  
+    Choose and configure your reverse proxy of choice to automatically 
+    generate SSL certificates and route secure traffic to your services.
+
+### 🧠 Architecture & Deep Dive
+*   **[Architecture & Design Patterns](Architecture-and-Mental-Model)**  
+    A technical deep dive into our modular component design, variable 
+    macro injection system, and the backend CQRS pattern.
+
+### 💻 Developer Guides
+*   **[Developer Component Editor Guide](Developer-Component-Editor-Guide)**  
+    A step-by-step guide to creating, updating, and validating components, 
+    managing variables, and generating secure authorization hashes within 
+    the Developer Editor.
+```
