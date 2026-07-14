@@ -28,7 +28,7 @@ web-based administration panel (accessible on port `81` on your Pi).
 ## 2. Traefik Setup
 
 Traefik is a modern, dynamic reverse proxy. If you checked the **Has Traefik 
-Support** box in a component's metadata, PiSelfhosting will automatically 
+Support** box in a component's metadata, NjordDeploy will automatically 
 generate the correct router labels in the final compose file.
 
 Traefik will read these labels directly and provision SSL certificates 

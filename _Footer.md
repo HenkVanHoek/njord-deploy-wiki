@@ -1,1 +1,1 @@
-Part of the PiSelfhosting project. Author Henk van Hoek
+Part of the NjordDeploy project. Author Henk van Hoek

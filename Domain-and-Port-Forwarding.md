@@ -1,6 +1,6 @@
 # Domain & Port Forwarding 🌐
 
-Since PiSelfhosting acts as an orchestrator for your self-hosted server, 
+Since NjordDeploy acts as an orchestrator for your self-hosted server, 
 making your applications securely accessible from outside your home network 
 requires a custom domain and router configurations.
 

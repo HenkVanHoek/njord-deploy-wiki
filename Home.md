@@ -1,12 +1,12 @@
-# Welcome to the PiSelfhosting Wiki 🚀
+# Welcome to the NjordDeploy Wiki 🚀
 
-PiSelfhosting is a modular, lightweight, and sovereign stack orchestrator designed to deploy self-hosted services onto Debian and Raspberry Pi servers. It completely eliminates the manual hassle of writing docker-compose files, managing networks, and configuring reverse proxies.
+NjordDeploy is a modular, lightweight, and sovereign stack orchestrator designed to deploy self-hosted services onto Debian and Raspberry Pi servers. It completely eliminates the manual hassle of writing docker-compose files, managing networks, and configuring reverse proxies.
 
 ---
 
 ## 💡 The Mental Model
 
-To understand how PiSelfhosting organizes your home server, we use three core concepts:
+To understand how NjordDeploy organizes your home server, we use three core concepts:
 
 ```mermaid
 graph TD

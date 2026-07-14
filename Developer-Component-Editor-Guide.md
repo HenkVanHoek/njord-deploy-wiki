@@ -48,7 +48,7 @@ file. Wrap all configurable settings in Jinja tags (e.g., `{{ PORT_NEXTCLOUD }}`
 Click **Validate Template** before saving. The backend validator will verify:
 1.  That the YAML structure is valid.
 2.  That any `container_name` declared inside the services strictly begins with the
-    mandatory prefix `piselfhosting-` to prevent collisions on target machines.
+    mandatory prefix `njorddeploy-` to prevent collisions on target machines.
 
 ---
 
@@ -87,14 +87,14 @@ To use this feature, you must provide a Gemini API Key:
 
 To decouple the release cycle of individual self-hosted services from the main application installer, components are stored and maintained in a separate repository.
 
-- Remote Repository: "https://github.com/HenkVanHoek/piselfhosting-components"
-- Custom Repository Variable: "PI_SELFHOSTING_COMPONENTS_REPO" (Defaults to "HenkVanHoek/piselfhosting-components")
+- Remote Repository: "https://github.com/HenkVanHoek/njorddeploy-components"
+- Custom Repository Variable: "PI_SELFHOSTING_COMPONENTS_REPO" (Defaults to "HenkVanHoek/njorddeploy-components")
 - Branch Variable: "PI_SELFHOSTING_COMPONENTS_BRANCH" (Defaults to "main")
 
 ### How Synchronization Works
 1. Fetching Remote Data:
    The application downloads the latest ZIP archive of the remote repository and extracts it to a local cache directory. On Linux, this is located inside the user data directory:
-   "~/.local/share/PiSelfhosting/remote_components_cache"
+   "~/.local/share/NjordDeploy/remote_components_cache"
 2. Diff and Compare:
    The system compares local component templates and metadata against the cached remote version. It detects if components are synced, modified, only available locally, or only available remotely.
 3. Synchronizing (Pull):
@@ -115,11 +115,11 @@ For offline development and deep codebase reasoning, you can run a local Mistral
 
 ### Setup and Configuration
 1. Create a Model file:
-   Create a file named "piselfhosting.mf" in the project root.
+   Create a file named "njorddeploy.mf" in the project root.
 2. Build the Model in Ollama:
    Run the following terminal command:
    ```bash
-   ollama create piselfhosting-expert -f piselfhosting.mf
+   ollama create njorddeploy-expert -f njorddeploy.mf
    ```
 3. Generate Codebase Context:
    Run the context generator script:
@@ -128,4 +128,4 @@ For offline development and deep codebase reasoning, you can run a local Mistral
    ```
    This script gathers all project code, runs a token count check to ensure it stays within the VRAM limit of an RTX 3060 (12GB VRAM), and produces the unified context file "llm_context.txt".
 4. Ingest Context:
-   Start a session with the "piselfhosting-expert" model in Open WebUI, then drag and drop the "llm_context.txt" file into your chat.
+   Start a session with the "njorddeploy-expert" model in Open WebUI, then drag and drop the "llm_context.txt" file into your chat.
